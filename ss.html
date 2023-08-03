@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ss.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="f1">first name:</h1>
+        <input id="in1" type="text" placeholder="Enter your First name">
+        <p id="pa1">First name must be less than or equal 10 characters.</p>
+        
+        <h1>Last name:</h1>
+        <input id="in2" type="text" placeholder="Enter your Last name">
+        <p id="pa2">Last name must be less than or equal 10 characters.</p>        
+        
+        
+        <h1>Password:</h1>
+        <input id="in3" type="password" placeholder="Enter your password">
+        <p id="pa3">Password must be numbers and less than or equal 20 numbers.</p>
+        
+        <h1>Email:</h1>
+        <input id="in4" type="email" placeholder="Enter your email">
+        <p id="pa4">You must add valid email.</p>
+
+        <h1>About you:</h1>
+        <textarea id="in5" name="message" id="" cols="30" rows="10" placeholder="About you"></textarea>
+        <p id="pa5">About you must be greater than 30 characters and less than 200 characters.</p>
+
+
+        <button id="save">Save</button>
+
+
+    </div>
+    <script>
+        pa1.style.display='none'
+        pa2.style.display='none'
+        pa3.style.display='none'
+        pa4.style.display='none'
+        pa5.style.display='none'
+
+
+        save.addEventListener('click' ,function(){
+         var inp1=in1.value;
+         var inpu1 = inp1.length;
+         if(inpu1 >10 || inpu1<1){
+            pa1.style.display='block'
+            in1.style.borderBottom='1px solid red'
+            in1.style.outlineColor='red'
+            in1.style.color='red'
+         }else{
+            pa1.style.display='none'
+            in1.style.borderBottom='1px solid green'
+            in1.style.outlineColor='green'
+            in1.style.color='green'
+         }
+         var inp2=in2.value;
+         var inpu2 = inp2.length;
+         
+
+         if(inpu2 >10 || inpu2<1){
+            pa2.style.display='block'
+            in2.style.borderBottom='1px solid red'
+            in2.style.outlineColor='red'
+            in2.style.color='red'
+         }else{
+            pa2.style.display='none'
+            in2.style.borderBottom='1px solid green'
+            in2.style.outlineColor='green'
+            in2.style.color='green'
+         }
+         var inp3=in3.value;
+         var x=~~inp3;
+         
+         var inpu3 = inp3.length;
+         if(inpu3 >20 || x==0){
+            pa3.style.display='block'
+            in3.style.borderBottom='1px solid red'
+            in3.style.outlineColor='red'
+            in3.style.color='red'
+         }else{
+            pa3.style.display='none'
+            in3.style.borderBottom='1px solid green'
+            in3.style.outlineColor='green'
+            in3.style.color='green'
+         }
+         var inp4=in4.value;
+         var inpu4 = inp4.length;
+         
+
+         if( !inp4.includes('@') || !inp4.includes('.com')){
+            
+            pa4.style.display='block'
+            in4.style.borderBottom='1px solid red'
+            in4.style.outlineColor='red'
+            in4.style.color='red'
+         }else if(!inp4.includes('gmail')&&!inp4.includes('yahoo')&&!inp4.includes('hotmail')) {
+
+            pa4.style.display='block'
+            in4.style.borderBottom='1px solid red'
+            in4.style.outlineColor='red'
+            in4.style.color='red'
+         }else{
+            pa4.style.display='none'
+            in4.style.borderBottom='1px solid green'
+            in4.style.outlineColor='green'
+            in4.style.color='green'
+         }
+         var inp5 = in5.value;
+        var inpu5 = inp5.split('');
+        var l = inpu5.length;
+        
+        if(l >200 || l<30){
+            pa5.style.display='block'
+            in5.style.borderBottom='1px solid red'
+            in5.style.outlineColor='red'
+            in5.style.color='red'
+         }else{
+            pa5.style.display='none'
+            in5.style.borderBottom='1px solid green'
+            in5.style.outlineColor='green'
+            in5.style.color='green'
+         }
+
+
+        })
+       
+
+    </script>
+</body>
+</html>
